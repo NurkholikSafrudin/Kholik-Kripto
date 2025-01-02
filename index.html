@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="background-audio" src="Ojonesuuu.mp3" loop></audio>
+    <div class="profile-card">
+        <div class="header">
+            <div class="logo">
+               <img src="Universitas Pelita Bangsa.png" alt="">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="profile-photo">
+                <img src="foto mess.jpeg" alt="">
+            </div>
+
+            <div class="student-info">
+                <div class="student-name">Nurkholik Safrudin</div>
+                <div class="student-nim">(312210507)</div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">+62 823 2080 5500</div>
+                <div class="contact-item" id = "Email" >kholikn690@gmail.com</div>
+                <div class="contact-item">Lokasi</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Memastikan audio diputar setelah halaman dimuat
+        window.addEventListener('load', function() {
+            const audio = document.getElementById("background-audio");
+
+            // Coba memutar audio
+            audio.play().then(() => {
+                console.log("Audio is playing!");
+            }).catch(error => {
+                console.log("Autoplay prevented:", error);
+                alert("Audio autoplay tidak diizinkan oleh browser. Silakan klik di mana saja untuk memulai.");
+            });
+        });
+
+        // Memutar audio setelah interaksi jika autoplay gagal
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById("background-audio");
+            audio.play();
+        });
+    </script> 
+</body>
+</html>
